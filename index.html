@@ -443,4 +443,738 @@
                     {
                         title: "Primary Deprotection and Gas Venting Controls",
                         details: [
-                   
+                            "Engage the synthesis vessel agitator to fully mix the Persian solution with the polymer-bound resin mass.",
+                            "Adjust thermal tracking utilities to maintain the reaction mass temperature at 22±1°C.",
+                            "Keep the vessel vent system monitored for carbon dioxide (CO2) gas discharge throughout the reaction runtime.",
+                            "Maintain active agitation for a target window of 20 minutes (allowable tolerance range: 20±2 minutes).",
+                            "Apply bottom nitrogen pressure to discharge the liquid phase to the chemical waste line while retaining the deprotected resin."
+                        ]
+                    },
+                    {
+                        title: "Secondary Deprotection Cycle Execution",
+                        details: [
+                            "Prepare a second identical batch of 20% Persian in DMF solution (928 Lts DMF + 232 Lts Persian) in the auxiliary vessel.",
+                            "Transfer the fresh deprotection mix into the synthesis vessel containing the single-deprotected resin mass.",
+                            "Reset the aging clock and maintain active mixing at 22±1°C for another 20 minutes (range: 20±2 minutes).",
+                            "Drain the second deprotection liquid phase completely via the bottom filter assembly using nitrogen gas pressure."
+                        ]
+                    },
+                    {
+                        title: "Resin Purification and Interfacial Displacement",
+                        details: [
+                            "Charge exactly 145 Lts of clean DMF solvent into the auxiliary reactor to rinse out residual Persian traces from the vessel walls.",
+                            "Transfer this flush volume into the main synthesis vessel as the first conditioning sweep.",
+                            "Repeat this wall rinse execution for a total of three discrete lots (3 × 145 Lts), combining them into the main resin filter bed.",
+                            "Discharge the collected conditioning volume from the synthesis vessel using maximum filter pressure parameters.",
+                            "Inject 1160 Lts of pure DMF solvent into the vessel and run the agitator for 10 minutes to clear liberated protecting groups.",
+                            "Filter the fluid out and repeat this purification wash sequence for a total of 6 continuous lots (6 × 1160 Lts).",
+                            "CRITICAL OPERATIONAL CODE: Do not drain the DMF fluid completely on the final wash loop; keep the resin submerged to prevent oxidation."
+                        ]
+                    }
+                ]
+            },
+            'toyota-coupling': {
+                stepNo: "03",
+                title: "2nd PAA 'Toyota' Coupling & De-protection (Step 03)",
+                vessel: "303HSPPS-C 3001 / 3002",
+                vesselType: "Hastelloy (Synthesis) | Cap: 3.0 KL",
+                params: [
+                    { label: "Toyota Weight", value: "72.21 Kgs" },
+                    { label: "Storme Volume", value: "32.91 Kgs" },
+                    { label: "Dindori Volume", value: "725 Lts" },
+                    { label: "Ninhydrin Test", value: "Resin Beads Bound" }
+                ],
+                alerts: [
+                    { type: 'warning', text: "CPP: Temperature of mass in the reactor must be maintained between 25±2°C during scaleup coupling reaction." }
+                ],
+                materials: [
+                    { name: "Toyota", factor: "0.4980", qty: "72.21 Kgs" },
+                    { name: "Storme", factor: "0.2270", qty: "32.91 Kgs" },
+                    { name: "Dindori", factor: "5.0000", qty: "725 Lts" },
+                    { name: "DMF Wash", factor: "8.0000", qty: "1160 Lts" }
+                ],
+                steps: [
+                    {
+                        title: "Reagent Dissolution and Activation Array",
+                        details: [
+                            "Verify that the main synthesis vessel holding the deprotected resin bed is sealed and pressurized with Nitrogen.",
+                            "Weigh out exactly 72.21 Kgs of Toyota building block using a calibrated digital scale setup under environmental enclosures.",
+                            "Charge the weighed Toyota compound into the glass-lined auxiliary reactor through the dedicated solid addition port.",
+                            "Weigh and add exactly 32.91 Kgs of Storme activating agent directly into the same auxiliary reactor loop.",
+                            "Meter 725 Lts of Dindori solvent into the auxiliary reactor, closing all charging valves immediately upon completion.",
+                            "Start the reactor paddle mixer and maintain continuous agitation to dissolve the raw materials completely.",
+                            "Circulate chilled brine through the reactor jacket to cool and maintain the chemical solution temperature at 20±2°C."
+                        ]
+                    },
+                    {
+                        title: "Coupling Transfer and Hot-Spot Thermal Regulation",
+                        details: [
+                            "Open the transfer manifold and slowly pump the activated Toyota solution from the reactor into the main synthesis vessel.",
+                            "Monitor the internal thermal probes carefully; adjust synthesis jacket cooling to absorb any exothermic activity.",
+                            "Maintain the absolute temperature of the reaction mass inside the synthesis vessel between 23°C and 27°C (Target: 25±2°C).",
+                            "Run the mechanical agitator at standard coupling speed to ensure even contact across the polymer resin support matrix.",
+                            "Maintain these stable processing settings for a target runtime of 2 hours (allowable window: 2 hours ± 10 minutes)."
+                        ]
+                    },
+                    {
+                        title: "In-Process Sampling and Analytical Validation",
+                        details: [
+                            "Isolate the synthesis loop and discharge a representative aliquot sample of resin beads via the inline isolation valve.",
+                            "Transfer the collected sample immediately to the QC laboratory for quantitative Ninhydrin testing.",
+                            "Maintain active agitation and thermal control at 25±2°C while waiting for formal analytical release.",
+                            "If the Ninhydrin test fails to meet specification (indicating incomplete coupling), extend the reaction hold time for 2 to 4 hours.",
+                            "Upon receiving a passing Ninhydrin result, apply top nitrogen pressure to drain the reaction liquors to the recovery line."
+                        ]
+                    },
+                    {
+                        title: "Displacement Wash and Resin Deprotection Sequence",
+                        details: [
+                            "Charge exactly 1160 Lts of pure DMF solvent into the vessel, agitate for 10 minutes, and blow dry via nitrogen pressure.",
+                            "Perform this post-coupling purification sequence a total of 5 times to thoroughly clear unreacted Toyota complexes.",
+                            "Prepare a 20% Persian in DMF solution in the auxiliary reactor using 928 Lts DMF and 232 Lts Persian liquid compound.",
+                            "Pump the deprotection solution into the synthesis vessel and maintain agitation at 22±1°C for 20 minutes to clear the terminal block.",
+                            "Drain the spent deprotection agent and repeat the Persian loop a second time to ensure absolute structural deprotection.",
+                            "Complete the cycle with 6 standard DMF purification flushes (1160 Lts each), keeping the resin wet on the final sweep."
+                        ]
+                    }
+                ]
+            },
+            'nissan-coupling': {
+                stepNo: "04",
+                title: "3rd PAA 'Nissan' Coupling & De-protection (Step 04)",
+                vessel: "303HSPPS-C 3001 / 3002",
+                vesselType: "Hastelloy | 3.0 KL Capacity",
+                params: [
+                    { label: "Nissan Mass", value: "81.92 Kgs" },
+                    { label: "Storme Qty", value: "32.91 Kgs" },
+                    { label: "Dindori Vol", value: "725 Lts" },
+                    { label: "Ageing Target", value: "30±3 Min" }
+                ],
+                alerts: [
+                    { type: 'warning', text: "Safety Warning: Ensure proper exhaust system tracking boundaries are active during process loops." }
+                ],
+                materials: [
+                    { name: "Nissan", factor: "0.5650", qty: "81.92 Kgs" },
+                    { name: "Storme", factor: "0.2270", qty: "32.91 Kgs" },
+                    { name: "Dindori", factor: "5.0000", qty: "725 Lts" }
+                ],
+                steps: [
+                    {
+                        title: "Activated Nissan Stock Solution Formulation",
+                        details: [
+                            "Check that the main synthesis vessel is isolated and stable under a nitrogen atmosphere of 0.05 MPa.",
+                            "Weigh out exactly 81.92 Kgs of fine Nissan compound using a calibrated digital balance system.",
+                            "Transfer the Nissan solids into the auxiliary reactor via vacuum powder transfer systems to eliminate dust generation.",
+                            "Add exactly 32.91 Kgs of Storme activating agent and meter 725 Lts of Dindori solvent into the reactor mix.",
+                            "Engage the reactor paddle mixer and maintain continuous agitation to achieve full component dissolution.",
+                            "Regulate the auxiliary jacket temperature to adjust the solution to a baseline of 20±1°C.",
+                            "Hold the activated mixture under slow mixing for an aging window of 30 minutes (allowable range: 30±3 minutes)."
+                        ]
+                    },
+                    {
+                        title: "Coupling Matrix Transfer and Temperature Controls",
+                        details: [
+                            "Align the chemical transfer line manifold and pump the activated Nissan solution into the synthesis vessel.",
+                            "Maintain a temperature profile of 20±5°C within the synthesis mass throughout the addition sequence.",
+                            "Engage the primary agitator to distribute the activated complex evenly through the swollen resin bed matrix.",
+                            "Run the process loop continuously at 20±5°C for an extended runtime of 2 hours to achieve full peptide binding.",
+                            "Apply bottom gas pressure to filter out the spent reaction liquors, transferring them directly to the waste recovery storage."
+                        ]
+                    },
+                    {
+                        title: "Analytical Sample Verification Protocols",
+                        details: [
+                            "Purge the inline sampling loop with nitrogen gas and extract a physical verification sample of resin beads.",
+                            "Run an immediate colorimetric test on-site to verify complete binding of the Nissan structural group.",
+                            "Record the sample extraction timestamp and analytical validation metrics in the batch manufacturing execution system.",
+                            "Maintain the synthesis bed under a nitrogen holding pressure of 0.03 MPa while awaiting formal laboratory release."
+                        ]
+                    },
+                    {
+                        title: "Deprotection Array and Final Wash Cycles",
+                        details: [
+                            "Perform 5 continuous purification cycles using fresh DMF solvent lots (1160 Lts per lot) to clear remaining compounds.",
+                            "Formulate a 20% Persian deprotection solution in the auxiliary vessel using 928 Lts DMF and 232 Lts Persian reagent.",
+                            "Pump the mixture into the synthesis vessel and run active deprotection sequences at 22±1°C for 20 minutes.",
+                            "Drain the fluid and execute a second 20-minute Persian loop to ensure complete cleavage of the protecting groups.",
+                            "Conclude this step by executing 6 standard DMF resin washes (1160 Lts each), ensuring the bed remains covered with fluid."
+                        ]
+                    }
+                ]
+            },
+            'cello-coupling': {
+                stepNo: "05",
+                title: "4th PAA 'Cello' Coupling & De-protection (Step 05)",
+                vessel: "303HSPPS-C 3001 / 3002",
+                vesselType: "Hastelloy | 3.0 KL Capacity",
+                params: [
+                    { label: "Cello Weight", value: "81.92 Kgs" },
+                    { label: "Storme Weight", value: "32.91 Kgs" },
+                    { label: "Dindori Volume", value: "725 Lts" },
+                    { label: "Scaleup Hold", value: "20±2 Min" }
+                ],
+                alerts: [
+                    { type: 'warning', text: "Note: Ensure proper ventilation loops are active during scaleup operations." }
+                ],
+                materials: [
+                    { name: "Cello Unit", factor: "0.5650", qty: "81.92 Kgs" },
+                    { name: "Storme", factor: "0.2270", qty: "32.91 Kgs" },
+                    { name: "Dindori", factor: "5.0000", qty: "725 Lts" }
+                ],
+                steps: [
+                    {
+                        title: "Cello Reactant Preparation Array",
+                        details: [
+                            "Confirm the synthesis vessel is maintained under an active nitrogen environment with low-pressure controls.",
+                            "Weigh out exactly 81.92 Kgs of clean Cello structural units on a calibrated digital floor scale configuration.",
+                            "Charge the Cello solids into the clean auxiliary reactor through the dedicated powder transfer port assembly.",
+                            "Weigh and add exactly 32.91 Kgs of Storme activating compound into the auxiliary reactor mix.",
+                            "Meter 725 Lts of Dindori solvent into the vessel, closing all input ports immediately to prevent solvent loss.",
+                            "Engage the reactor mixer and maintain continuous agitation to dissolve all crystalline structures completely.",
+                            "Circulate thermal fluid through the reactor jacket to adjust and stabilize the activated mix to 20±2°C."
+                        ]
+                    },
+                    {
+                        title: "Mass Transfer and High-Contact Coupling Controls",
+                        details: [
+                            "Open the bottom discharge line of the auxiliary reactor and transfer the Cello solution into the synthesis vessel.",
+                            "Configure utility controllers to maintain the reaction mass temperature at 25±2°C throughout the execution loop.",
+                            "Engage the synthesis agitator to distribute the activated Cello molecules evenly through the resin bed.",
+                            "Maintain continuous agitation for a target window of 2 hours to complete the fourth chain elongation block.",
+                            "Apply nitrogen pressure to discharge the liquid phase through the bottom filter to the waste recovery pipeline."
+                        ]
+                    },
+                    {
+                        title: "In-Process Quality Testing Operations",
+                        details: [
+                            "Purge the analytical sample line with inert nitrogen and extract a representative resin bead test sample.",
+                            "Perform an immediate colorimetric test to confirm complete binding of the Cello structural units to the matrix.",
+                            "Record all local parameters, temperatures, and analytical validation scores in the batch record logs.",
+                            "Maintain the synthesis bed under a static nitrogen blanket of 0.03 MPa during analytical review."
+                        ]
+                    },
+                    {
+                        title: "Terminal Block Deprotection Array",
+                        details: [
+                            "Execute 5 continuous purification cycles with fresh DMF solvent (1160 Lts per lot) to rinse the bound matrix.",
+                            "Mix a 20% Persian deprotection solution in the auxiliary reactor using 928 Lts DMF and 232 Lts Persian reagent.",
+                            "Pump the solution into the synthesis vessel and maintain active agitation at 22±1°C for exactly 20 minutes.",
+                            "Drain the liquid phase and execute a second 20-minute Persian loop to ensure complete deprotection.",
+                            "Complete this processing step by executing 6 standard DMF washes (1160 Lts each), keeping the resin bed wet."
+                        ]
+                    }
+                ]
+            },
+            'curtis-coupling': {
+                stepNo: "06",
+                title: "5th PAA 'Curtis' Coupling Stage (Step 06)",
+                vessel: "303HSPPS-C 3001 / 3002",
+                vesselType: "Hastelloy 3.0 KL Unit",
+                params: [
+                    { label: "Curtis Solid Mass", value: "115.15 Kgs" },
+                    { label: "Storme Value", value: "32.91 Kgs" },
+                    { label: "Dindori Vol", value: "725 Lts" },
+                    { label: "Agitation Timer", value: "2 Hours" }
+                ],
+                alerts: [
+                    { type: 'warning', text: "Thermal Profile: Exothermic progression observed during dissolution loops. Monitor jacket cooling status." }
+                ],
+                materials: [
+                    { name: "Curtis Complex", factor: "0.7941", qty: "115.15 Kgs" },
+                    { name: "Storme Activator", factor: "0.2270", qty: "32.91 Kgs" },
+                    { name: "Dindori Matrix", factor: "5.0000", qty: "725 Lts" }
+                ],
+                steps: [
+                    {
+                        title: "Curtis Activation and Dissolution Handling",
+                        details: [
+                            "Verify the synthesis vessel is sealed and stable under a positive nitrogen pressure of 0.04 MPa.",
+                            "Weigh out exactly 115.15 Kgs of Curtis complex compound under a high-containment dispensing enclosure.",
+                            "Transfer the Curtis solids into the auxiliary reactor using an automated vacuum powder loading system.",
+                            "Add exactly 32.91 Kgs of Storme activating agent and meter 725 Lts of Dindori solvent into the mixture.",
+                            "Engage the paddle agitator, monitoring closely for an exothermic temperature spike during initial dissolution.",
+                            "Circulate chilled brine through the jacket to manage the exotherm and stabilize the solution at 20±2°C.",
+                            "Maintain active mixing for 30 minutes to ensure complete activation of the Curtis complex chemical structure."
+                        ]
+                    },
+                    {
+                        title: "Coupling Integration and Thermal Regulation",
+                        details: [
+                            "Open the transfer valves and slowly add the activated Curtis solution into the primary synthesis vessel.",
+                            "Regulate the synthesis vessel jacket cooling to maintain the reaction temperature strictly at 25±2°C.",
+                            "Set the mechanical agitator to standard coupling speed to maintain an even suspension of resin beads.",
+                            "Run the process loop continuously for a target window of 2 hours to secure complete chemical binding.",
+                            "Drain the spent reaction liquors through the bottom filter assembly using nitrogen pressure to the recovery system."
+                        ]
+                    },
+                    {
+                        title: "Analytical Testing and Structural Validation",
+                        details: [
+                            "Isolate the synthesis line and extract a physical resin bead sample from the inline collection valve.",
+                            "Submit the sample to the QC lab for colorimetric verification to confirm full incorporation of the fifth block.",
+                            "Log all critical processing data, mass temperatures, and analytical validation scores into the system logs.",
+                            "Maintain the synthesis bed under a nitrogen holding pressure of 0.03 MPa while awaiting lab results."
+                        ]
+                    },
+                    {
+                        title: "Deprotection Configuration and Purification Loops",
+                        details: [
+                            "Perform 5 purification washes using fresh DMF solvent lots (1160 Lts per lot) to clear unreacted compounds.",
+                            "Prepare a 20% Persian deprotection mix in the auxiliary reactor using 928 Lts DMF and 232 Lts Persian reagent.",
+                            "Pump the solution into the synthesis vessel and maintain active agitation at 22±1°C for 20 minutes.",
+                            "Discharge the liquid phase and complete a second 20-minute Persian loop to ensure complete structural deprotection.",
+                            "Conclude this step by running 6 standard DMF purification flushes (1160 Lts each), keeping the resin bed wet."
+                        ]
+                    }
+                ]
+            },
+            'lantus-coupling': {
+                stepNo: "07",
+                title: "6th PAA 'Lantus' Coupling Stage (Step 07)",
+                vessel: "303HSPPS-C 3001 / 3002",
+                vesselType: "Hastelloy 3.0 KL System",
+                params: [
+                    { label: "Lantus Mass Input", value: "112.56 Kgs" },
+                    { label: "Storme Weight", value: "32.91 Kgs" },
+                    { label: "Dindori Vol", value: "725 Lts" },
+                    { label: "Sampling Interval", value: "Standard Loop" }
+                ],
+                alerts: [
+                    { type: 'warning', text: "Analytical Notification: Collect post-coupling matrix sample for binding verification before washing." }
+                ],
+                materials: [
+                    { name: "Lantus Agent", factor: "0.7763", qty: "112.56 Kgs" },
+                    { name: "Storme Part", factor: "0.2270", qty: "32.91 Kgs" },
+                    { name: "Dindori Base", factor: "5.0000", qty: "725 Lts" }
+                ],
+                steps: [
+                    {
+                        title: "Lantus Reagent Dispensing and Dissolution",
+                        details: [
+                            "Ensure the primary synthesis vessel is isolated and stabilized under a constant nitrogen gas blanket.",
+                            "Weigh out exactly 112.56 Kgs of Lantus agent compound using calibrated digital balance systems.",
+                            "Charge the Lantus solids into the auxiliary reactor through the secure powder charging port assembly.",
+                            "Weigh and add exactly 32.91 Kgs of Storme activating compound into the auxiliary mixing stream.",
+                            "Meter 725 Lts of Dindori solvent into the reactor, closing all inlet valves immediately upon completion.",
+                            "Start the mechanical mixer to dissolve all crystalline structures into a clear, uniform solution.",
+                            "Regulate the auxiliary reactor jacket utilities to adjust and maintain the solution temperature at 20±2°C."
+                        ]
+                    },
+                    {
+                        title: "Coupling Matrix Transfer and Process Optimization",
+                        details: [
+                            "Open the discharge path and pump the activated Lantus solution into the primary synthesis vessel.",
+                            "Configure thermal controllers to maintain the reaction mass temperature at 25±2°C throughout the process loop.",
+                            "Engage the synthesis agitator to distribute the activated molecules evenly through the swollen resin matrix.",
+                            "Maintain active mixing conditions for 2 hours to complete the sixth chain elongation sequence.",
+                            "Apply bottom nitrogen pressure to discharge the liquid phase through the filter screen to waste storage."
+                        ]
+                    },
+                    {
+                        title: "In-Process Sampling and Verification Array",
+                        details: [
+                            "Extract a physical resin bead sample from the inline isolation valve prior to running any washing sequences.",
+                            "Submit the sample to the QC lab for immediate colorimetric testing to verify full binding of the Lantus group.",
+                            "Log all processing data, system temperatures, and analytical validation metrics into the manufacturing database.",
+                            "Maintain the synthesis matrix under a static nitrogen blanket of 0.03 MPa during analytical evaluation."
+                        ]
+                    },
+                    {
+                        title: "Deprotection Sequence and Resin Purification",
+                        details: [
+                            "Execute 5 continuous purification cycles with fresh DMF solvent (1160 Lts per lot) to wash the bound matrix.",
+                            "Formulate a 20% Persian deprotection solution in the auxiliary reactor using 928 Lts DMF and 232 Lts Persian reagent.",
+                            "Pump the mixture into the synthesis vessel and maintain active agitation at 22±1°C for exactly 20 minutes.",
+                            "Drain the liquid phase and run a second 20-minute Persian loop to ensure complete cleavage of the protecting groups.",
+                            "Complete this processing step by running 6 standard DMF washes (1160 Lts each), ensuring the bed remains wet."
+                        ]
+                    }
+                ]
+            },
+            'ranger-coupling': {
+                stepNo: "08",
+                title: "7th PAA 'Ranger' Coupling Stage (Step 08)",
+                vessel: "303HSPPS-C 3001 / 3002",
+                vesselType: "Hastelloy System Matrix",
+                params: [
+                    { label: "Ranger Charge Mass", value: "90.23 Kgs" },
+                    { label: "Storme Weight", value: "32.91 Kgs" },
+                    { label: "Dindori Volume", value: "725 Lts" },
+                    { label: "Washing Ops", value: "5 Cycle Standard" }
+                ],
+                alerts: [
+                    { type: 'warning', text: "Vessel Note: Validate filter base parameters before finalizing collection streams." }
+                ],
+                materials: [
+                    { name: "Ranger Feed", factor: "0.6223", qty: "90.23 Kgs" },
+                    { name: "Storme Base", factor: "0.2270", qty: "32.91 Kgs" },
+                    { name: "Dindori Fluid", factor: "5.0000", qty: "725 Lts" }
+                ],
+                steps: [
+                    {
+                        title: "Ranger Reactant Activation Sequence",
+                        details: [
+                            "Verify the primary synthesis vessel containing the bound peptide matrix is stable under a nitrogen atmosphere.",
+                            "Weigh out exactly 90.23 Kgs of Ranger feed compound using digital floor scales under an active exhaust enclosure.",
+                            "Charge the Ranger solids into the auxiliary reactor via a closed vacuum transfer tube assembly.",
+                            "Add exactly 32.91 Kgs of Storme activating agent and meter 725 Lts of Dindori solvent into the mixture.",
+                            "Engage the reactor mixer and maintain continuous agitation to dissolve all raw compounds completely.",
+                            "Adjust the auxiliary reactor jacket loop to bring the chemical solution temperature to a stable 20±2°C.",
+                            "Hold the activated solution under slow mixing for 30 minutes to complete the pre-activation sequence."
+                        ]
+                    },
+                    {
+                        title: "Coupling Transfer and Mass Thermal Regulation",
+                        details: [
+                            "Open the transfer valves and pump the activated Ranger solution into the primary synthesis vessel.",
+                            "Configure utility tracking to maintain the internal reaction mass temperature strictly at 25±2°C.",
+                            "Set the mechanical agitator to standard coupling speed to ensure even contact across the resin bed support matrix.",
+                            "Maintain these stable process settings for a target runtime of 2 hours to ensure complete chemical binding.",
+                            "Drain the spent reaction liquors through the bottom filter assembly using nitrogen pressure to the recovery line."
+                        ]
+                    },
+                    {
+                        title: "Inline Quality Testing and Validation Checks",
+                        details: [
+                            "Purge the sample valve line with nitrogen gas and extract a physical sample of the resin beads.",
+                            "Submit the sample to the QC lab for immediate colorimetric testing to confirm complete incorporation of the seventh block.",
+                            "Record all operational metrics, temperatures, and analytical validation scores in the batch record database.",
+                            "Maintain the synthesis bed under a nitrogen holding pressure of 0.03 MPa during analytical review."
+                        ]
+                    },
+                    {
+                        title: "Deprotection Array and Final Resin Washing",
+                        details: [
+                            "Perform 5 continuous purification cycles using fresh DMF solvent lots (1160 Lts per lot) to clear remaining compounds.",
+                            "Prepare a 20% Persian deprotection mix in the auxiliary reactor using 928 Lts DMF and 232 Lts Persian reagent.",
+                            "Pump the solution into the synthesis vessel and maintain active agitation at 22±1°C for 20 minutes.",
+                            "Discharge the liquid phase and complete a second 20-minute Persian loop to ensure complete structural deprotection.",
+                            "Conclude this step by running 6 standard DMF purification flushes (1160 Lts each), keeping the resin bed wet."
+                        ]
+                    }
+                ]
+            },
+            'windstar-coupling': {
+                stepNo: "09",
+                title: "8th PAA 'Windstar' Coupling Stage (Step 09)",
+                vessel: "303HSPPS-C 3001 / 3002",
+                vesselType: "Hastelloy Synthesis Setup",
+                params: [
+                    { label: "Windstar Input Weight", value: "105.20 Kgs" },
+                    { label: "Storme Mass", value: "32.91 Kgs" },
+                    { label: "Dindori Volume", value: "725 Lts" },
+                    { label: "Resin Volume", value: "Full Matrix" }
+                ],
+                alerts: [
+                    { type: 'warning', text: "System Interlock: Terminal coupling step. Confirm validation logs match before proceeding." }
+                ],
+                materials: [
+                    { name: "Windstar Complex", factor: "0.7255", qty: "105.20 Kgs" },
+                    { name: "Storme Activator", factor: "0.2270", qty: "32.91 Kgs" },
+                    { name: "Dindori Stock", factor: "5.0000", qty: "725 Lts" }
+                ],
+                steps: [
+                    {
+                        title: "Windstar Final Reactant Dissolution",
+                        details: [
+                            "Confirm the primary synthesis vessel is isolated and stable under a nitrogen blanket of 0.05 MPa.",
+                            "Weigh out exactly 105.20 Kgs of Windstar complex compound using calibrated digital floor scales.",
+                            "Transfer the Windstar solids into the auxiliary reactor through the dedicated solid addition port assembly.",
+                            "Weigh and add exactly 32.91 Kgs of Storme activating compound into the auxiliary mixing stream.",
+                            "Meter 725 Lts of Dindori solvent into the reactor, closing all input ports immediately to prevent solvent loss.",
+                            "Engage the reactor mixer and maintain continuous agitation to dissolve all crystalline structures completely.",
+                            "Circulate thermal fluid through the reactor jacket to adjust and stabilize the activated mix to 20±2°C."
+                        ]
+                    },
+                    {
+                        title: "Terminal Coupling Matrix Transfer and Controls",
+                        details: [
+                            "Open the discharge path and pump the activated Windstar solution into the primary synthesis vessel.",
+                            "Configure utility controllers to maintain the reaction mass temperature at 25±2°C throughout the process loop.",
+                            "Engage the synthesis agitator to distribute the activated molecules evenly through the swollen resin matrix.",
+                            "Maintain active mixing conditions for an extended hold window of 3 hours to secure complete conversion signatures.",
+                            "Apply bottom nitrogen pressure to discharge the liquid phase through the filter screen to waste storage."
+                        ]
+                    },
+                    {
+                        title: "Final Block In-Process Quality Testing",
+                        details: [
+                            "Extract a physical resin bead sample from the inline isolation valve prior to running any washing sequences.",
+                            "Submit the sample to the QC lab for immediate colorimetric testing to verify full binding of the terminal Windstar group.",
+                            "Log all processing data, system temperatures, and analytical validation metrics into the manufacturing database.",
+                            "Maintain the synthesis matrix under a static nitrogen blanket of 0.03 MPa during analytical evaluation."
+                        ]
+                    },
+                    {
+                        title: "Final Deprotection and Resin Cleaning Arrays",
+                        details: [
+                            "Execute 5 continuous purification cycles with fresh DMF solvent (1160 Lts per lot) to wash the bound matrix.",
+                            "Formulate a 20% Persian deprotection solution in the auxiliary reactor using 928 Lts DMF and 232 Lts Persian reagent.",
+                            "Pump the mixture into the synthesis vessel and maintain active agitation at 22±1°C for exactly 20 minutes.",
+                            "Drain the liquid phase and run a second 20-minute Persian loop to ensure complete cleavage of the protecting groups.",
+                            "Complete this processing step by running 6 standard DMF washes (1160 Lts each), ensuring the bed remains wet."
+                        ]
+                    }
+                ]
+            },
+            'dry-material': {
+                stepNo: "10",
+                title: "Dry Material Master Mapping (Step 10)",
+                vessel: "Dryer Unit System - 303",
+                vesselType: "Vacuum Tumble Filter Setup",
+                params: [
+                    { label: "Moisture Target", value: "Under 2.5% LOD" },
+                    { label: "Vacuum Level", value: "-0.09 MPa Min" },
+                    { label: "Chamber Temp", value: "35°C Max Set" },
+                    { label: "Rotation Speed", value: "6-8 RPM Safe" }
+                ],
+                alerts: [
+                    { type: 'warning', text: "Critical Boundary: Static charges can build during processing. Ensure proper system grounding." }
+                ],
+                materials: [
+                    { name: "Moist Substrate Cake", factor: "1.0000", qty: "306.0 Kgs" },
+                    { name: "Inert Nitrogen Purge", factor: "Continuous", qty: "As Required" }
+                ],
+                steps: [
+                    {
+                        title: "Resin Slurry Transfer and Cake Deliquoring",
+                        details: [
+                            "Verify the Vacuum Tumble Dryer Unit System-303 is clean, completely dry, and pre-grounded against static electricity.",
+                            "Apply low nitrogen pressure to pump the completed moist resin slurry out of the primary synthesis loops into the dryer chamber.",
+                            "Engage the internal filter base system to allow free-flowing solvents to drain away into the recovery receiver tank.",
+                            "Apply top nitrogen pressure of 0.05 MPa to squeeze residual solvent out of the consolidated cake bed layer.",
+                            "Monitor the drainage sight glass continuously until solvent filtrate flow stops completely."
+                        ]
+                    },
+                    {
+                        title: "Vacuum Loading and Thermal Drying Arrays",
+                        details: [
+                            "Seal all main loading ports and physical charging manways on the dryer assembly.",
+                            "Isolate the atmospheric vent lines and open the deep vacuum manifold valve gradually.",
+                            "Pull and maintain an internal chamber vacuum level of No Less Than -0.09 MPa throughout the drying run.",
+                            "Initiate warm water circulation through the dryer heating jacket, setting the temperature controller to a maximum of 35°C.",
+                            "Engage the physical chamber rotation drive, setting a slow, safe tumble speed of 6 to 8 RPM.",
+                            "Run continuous, brief nitrogen gas pulses (swaps) through the cake bed to act as a sweeping carrier for internal moisture."
+                        ]
+                    },
+                    {
+                        title: "Analytical Sampling and Loss on Drying Verification",
+                        details: [
+                            "Stop the chamber rotation drive and vent the internal vacuum safely using dry nitrogen gas after a 6-hour drying run.",
+                            "Open the clean sampling hatch under a continuous nitrogen curtain to extract a physical sample of the dried solid.",
+                            "Submit the collected core sample to the analytical laboratory for Loss on Drying (LOD) testing.",
+                            "Reseal the dryer hatch, re-apply deep vacuum, and maintain tumbling parameters while awaiting formal laboratory release.",
+                            "Confirm the analytical result meets the target parameter of Under 2.5% LOD before authorizing product discharge.",
+                            "Discharge the dry, verified substrate solid into anti-static lined collection drums under an inert nitrogen environment."
+                        ]
+                    }
+                ]
+            },
+            'cleavage-reaction': {
+                stepNo: "11",
+                title: "Cleavage Reaction Protocols (Step 11)",
+                vessel: "303GLR-Cleavage 3005",
+                vesselType: "Glass-Lined Reactor | Cap: 5.0 KL",
+                params: [
+                    { label: "Cleaving Vol", value: "3700 Lts Matrix" },
+                    { label: "Scavenger Mix", value: "185 Lts Total" },
+                    { label: "Target Temp", value: "15±2°C Steady" },
+                    { label: "Reaction Window", value: "4 Hours Total" }
+                ],
+                alerts: [
+                    { type: 'warning', text: "Corrosion Warning: Acidic fumes generated during cleavage loops. Fume handling must be active." }
+                ],
+                materials: [
+                    { name: "Dried Substrate Solid", factor: "1.0000", qty: "185.0 Kgs" },
+                    { name: "Cleaving Solution", factor: "20.0000", qty: "3700 Lts" },
+                    { name: "Scavenger Agent", factor: "1.0000", qty: "185 Lts" }
+                ],
+                steps: [
+                    {
+                        title: "Acidic Reagent Charging and Pre-Cooling Arrays",
+                        details: [
+                            "Verify the 5.0 KL Glass-Lined Reactor (303GLR-Cleavage 3005) is completely dry and its acid fume scrubbing system is fully operational.",
+                            "Vacuum-charge exactly 3700 Lts of highly corrosive Cleaving Solution matrix into the reactor through lined Teflon pipes.",
+                            "Engage the glass-coated anchor agitator at low speed to establish a stable fluid mixing profile.",
+                            "Circulate ultra-chilled coolant through the reactor jacket to bring the internal liquid temperature down below 10°C.",
+                            "Meter exactly 185 Lts of protective Scavenger Agent into the chilled liquid matrix under constant mixing."
+                        ]
+                    },
+                    {
+                        title: "Solid Substrate Feeding and Exothermic Management",
+                        details: [
+                            "Position the solid addition hopper containing exactly 185.0 Kgs of Dried Substrate Solid over the charging port.",
+                            "Initiate a slow, incremental feed of the dry powder into the cold acid mixture to prevent localized hot spots.",
+                            "Monitor the internal thermal probes continuously; adjust jacket cooling to maintain the reaction temperature below 15°C.",
+                            "Ensure the internal process temperature stabilizes precisely within the target window of 15±2°C once addition is complete.",
+                            "Seal the solid entry port, log the start timestamp of the cleavage reaction loop, and maintain steady agitation."
+                        ]
+                    },
+                    {
+                        title: "Reaction Hold Period and Secondary Verification",
+                        details: [
+                            "Maintain continuous mechanical mixing at 15±2°C for a fixed reaction window of 4 hours to cleave the peptide chain.",
+                            "Monitor the automated acid scrubbing system parameters to ensure full containment of generated corrosive vapors.",
+                            "Extract a liquid process control sample from the bottom flush valve using an acid-resistant sampling assembly.",
+                            "Run high-performance liquid chromatography (HPLC) testing on-site to verify complete cleavage validation scores.",
+                            "Keep the cleaved crude chemical liquid stable at 15°C inside the reactor while configuring downstream transfer lines."
+                        ]
+                    }
+                ]
+            },
+            'extraction-precipitation': {
+                stepNo: "12",
+                title: "Extraction & Precipitation Operations (Step 12)",
+                vessel: "303GLR-Precip 3006 / 3007",
+                vesselType: "Glass-Lined Dual Tank System",
+                params: [
+                    { label: "Anti-Solvent Vol", value: "7400 Lts Volume" },
+                    { label: "Precipitation Temp", value: "-5°C to 0°C" },
+                    { label: "Filter Spin Factor", value: "900 RPM Max" },
+                    { label: "Wash Liquid Vol", value: "1200 Lts Lot" }
+                ],
+                alerts: [
+                    { type: 'warning', text: "Flammability Warning: Anti-solvent vapors present flash hazards. Maintain continuous inert nitrogen monitoring." }
+                ],
+                materials: [
+                    { name: "Crude Chemical Liquid", factor: "From Step 11", qty: "Full Volume" },
+                    { name: "Organic Anti-Solvent", factor: "40.0000", qty: "7400 Lts" },
+                    { name: "Chilled Washing Fluid", factor: "6.5000", qty: "1200 Lts" }
+                ],
+                steps: [
+                    {
+                        title: "Anti-Solvent Pre-Chilling and Flammability Controls",
+                        details: [
+                            "Verify the glass-lined precipitation tanks 3006/3007 are nitrogen-inerted with oxygen levels monitored below 1%.",
+                            "Pump exactly 7400 Lts of highly flammable Organic Anti-Solvent into the dual tank precipitation loop.",
+                            "Engage the low-profile agitators and circulate cryogenic coolant through the tank jackets.",
+                            "Chill the large volume of organic anti-solvent down until it stabilizes within the target range of -5°C to 0°C."
+                        ]
+                    },
+                    {
+                        title: "Controlled Crystallization and Precipitation Cascades",
+                        details: [
+                            "Open the transfer line from Step 11 and slow-feed the acidic crude chemical liquid into the pre-chilled anti-solvent.",
+                            "Control the addition rate strictly to match cooling capacity, ensuring the slurry temperature never exceeds 0°C.",
+                            "Observe the formation of crude peptide crystals through the flameproof tank sight glass assemblies.",
+                            "Maintain active, non-destructive agitation at -2°C for 1 hour post-addition to complete crystal growth loops."
+                        ]
+                    },
+                    {
+                        title: "Centrifugal Extraction and Solid Isolation",
+                        details: [
+                            "Align the slurry feed lines to the automated, nitrogen-blanketed centrifuge extraction equipment.",
+                            "Feed the cold crystal slurry into the centrifuge drum basket in controlled layer increments.",
+                            "Accelerate the centrifuge drive to spin-dry the product cake up to a maximum factor of 900 RPM.",
+                            "Drain out the hazardous acidic mother liquors to the dedicated chemical containment network."
+                        ]
+                    },
+                    {
+                        title: "Cake Washing and Final Product Harvesting",
+                        details: [
+                            "Meter and spray a 1200 Lts lot of Chilled Washing Fluid over the spun centrifuge cake surface.",
+                            "Spin the centrifuge basket at 900 RPM for 15 minutes to displace trace acids and residual impurities.",
+                            "Extract a final wash filtrate sample from the outlet line to verify a neutral pH profile.",
+                            "Disengage the centrifuge drive, open the assembly, and harvest the pure precipitated solid into secure storage containers."
+                        ]
+                    }
+                ]
+            }
+        };
+
+        function switchStage(stageKey) {
+            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+            const selectedButton = document.getElementById(`btn-${stageKey}`);
+            if(selectedButton) selectedButton.classList.add('active');
+
+            const data = processDatabase[stageKey];
+            const viewport = document.getElementById('stage-viewport');
+
+            if (!data) {
+                viewport.innerHTML = `<p style="padding:20px; color:var(--accent-red);">Error: Step Configuration Data Missing.</p>`;
+                return;
+            }
+
+            let parameterCardsHtml = '';
+            data.params.forEach(p => {
+                parameterCardsHtml += `
+                    <div class="param-card">
+                        <div class="param-label">${p.label}</div>
+                        <div class="param-value">${p.value}</div>
+                    </div>
+                `;
+            });
+
+            let materialRowsHtml = '';
+            data.materials.forEach(m => {
+                materialRowsHtml += `
+                    <tr>
+                        <td><strong>${m.name}</strong></td>
+                        <td style="font-family:monospace; color:var(--accent-blue);">${m.factor}</td>
+                        <td style="font-family:monospace; font-weight:bold;">${m.qty}</td>
+                    </tr>
+                `;
+            });
+
+            let stepBlocksHtml = '';
+            data.steps.forEach((step, idx) => {
+                let subStepItems = '';
+                step.details.forEach(detail => {
+                    subStepItems += `<li>${detail}</li>`;
+                });
+
+                stepBlocksHtml += `
+                    <div class="step-block">
+                        <h4>Sub-Section ${idx + 1}: ${step.title}</h4>
+                        <ul class="sub-steps-list">
+                            ${subStepItems}
+                        </ul>
+                    </div>
+                `;
+            });
+
+            viewport.innerHTML = `
+                <div class="process-details-section">
+                    <h2>${data.title}</h2>
+                    
+                    <div class="info-summary-container">
+                        <div class="summary-header">
+                            <div>
+                                <span class="reactor-id" style="margin-right: 10px;">${data.vessel}</span>
+                                <span style="font-size:0.85rem; color:var(--text-muted);"><strong>Hardware Typology:</strong> ${data.vesselType}</span>
+                            </div>
+                            <div class="live-status-pill">SYSTEM MONITOR STABLE</div>
+                        </div>
+                        <div class="dashboard-grid">
+                            ${parameterCardsHtml}
+                        </div>
+                    </div>
+
+                    ${data.alerts.map(a => `<div class="alert-box ${a.type}">${a.text}</div>`).join('')}
+
+                    <h3 style="margin-top:25px; font-size:1.2rem; color:var(--text-main);">Process Material Allocation Metrics</h3>
+                    <table class="material-table">
+                        <thead>
+                            <tr>
+                                <th>Chemical Material Component Designation</th>
+                                <th>Factor Multiplier</th>
+                                <th>Required Batch Quantity Metric</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${materialRowsHtml}
+                        </tbody>
+                    </table>
+
+                    <h3 style="margin:25px 0 15px 0; font-size:1.2rem; color:var(--text-main);">Detailed Step-by-Step Operating Instructions (Step ${data.stepNo})</h3>
+                    ${stepBlocksHtml}
+                </div>
+            `;
+        }
+
+        window.onload = function() {
+            switchStage('nortel-coupling');
+        };
+    </script>
+</body>
+</html>
