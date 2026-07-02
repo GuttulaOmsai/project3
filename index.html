@@ -129,21 +129,21 @@
             border: 1px solid var(--border-color);
         }
 
-        .mimic-panel {
+        .info-summary-container {
             background-color: #020617;
             border: 2px solid var(--border-color);
             border-radius: 8px;
-            padding: 25px;
+            padding: 20px;
             margin-bottom: 30px;
         }
 
-        .mimic-header {
+        .summary-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px dashed var(--border-color);
-            padding-bottom: 10px;
-            margin-bottom: 15px;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
         }
 
         .reactor-id {
@@ -151,7 +151,7 @@
             padding: 4px 10px;
             border-radius: 4px;
             font-family: monospace;
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: var(--accent-blue);
             border: 1px solid var(--border-color);
         }
@@ -168,48 +168,37 @@
             gap: 6px;
         }
 
-        .live-status-pill::before {
-            content: '';
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            background-color: var(--accent-green);
-            border-radius: 50%;
-            animation: pulse 1.5s infinite;
-        }
-
-        @keyframes pulse {
-            0% { opacity: 0.4; }
-            50% { opacity: 1; }
-            100% { opacity: 0.4; }
-        }
-
         .dashboard-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 15px;
-            margin-top: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         .param-card {
             background: #0f172a;
-            padding: 12px;
+            padding: 15px;
             border-radius: 6px;
             border: 1px solid var(--border-color);
         }
 
         .param-label {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--text-muted);
             text-transform: uppercase;
+            margin-bottom: 4px;
         }
 
         .param-value {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: bold;
             font-family: monospace;
             color: var(--text-main);
-            margin-top: 4px;
         }
 
         .alert-box {
@@ -288,11 +277,6 @@
             font-weight: bold;
         }
 
-        .highlight-text {
-            color: var(--accent-amber);
-            font-weight: 600;
-        }
-
         @media (max-width: 1024px) {
             .container {
                 grid-template-columns: 1fr;
@@ -308,8 +292,8 @@
 <body>
 
     <header>
-        <h1>N I T Y A </h1>
-        <p> Module-3 </p>
+        <h1>N I T Y A<h1>
+        <p> Module-3 System</p>
     </header>
 
     <div class="container">
@@ -318,40 +302,41 @@
             
             <div class="nav-group">
                 <div class="nav-group-title">Stage I: Synthesis Loops</div>
-                <button class="nav-btn active" onclick="switchStage('nortel-coupling')">Page 03: Nortel Coupling / Capping</button>
-                <button class="nav-btn" onclick="switchStage('nortel-deprotection')">Page 04: Deprotection after Nortel</button>
-                <button class="nav-btn" onclick="switchStage('toyota-coupling')">Page 05: 2nd PAA 'Toyota' Coupling</button>
-                <button class="nav-btn" onclick="switchStage('nissan-coupling')">Page 06: 3rd PAA 'Nissan' Coupling</button>
-                <button class="nav-btn" onclick="switchStage('cello-coupling')">Page 07: 4th PAA 'Cello' Coupling</button>
-                <button class="nav-btn" onclick="switchStage('curtis-coupling')">Page 08: 5th PAA 'Curtis' Coupling</button>
-                <button class="nav-btn" onclick="switchStage('lantus-coupling')">Page 09: 6th PAA 'Lantus' Coupling</button>
-                <button class="nav-btn" onclick="switchStage('ranger-coupling')">Page 10: 7th PAA 'Ranger' Coupling</button>
-                <button class="nav-btn" onclick="switchStage('windstar-coupling')">Page 11: 8th PAA 'Windstar' Coupling</button>
-                <button class="nav-btn" onclick="switchStage('dry-material')">Page 12: Dry Material Master Mapping</button>
+                <button id="btn-nortel-coupling" class="nav-btn active" onclick="switchStage('nortel-coupling')">Step 01: Nortel Coupling / Capping</button>
+                <button id="btn-nortel-deprotection" class="nav-btn" onclick="switchStage('nortel-deprotection')">Step 02: Deprotection after Nortel</button>
+                <button id="btn-toyota-coupling" class="nav-btn" onclick="switchStage('toyota-coupling')">Step 03: 2nd PAA 'Toyota' Coupling</button>
+                <button id="btn-nissan-coupling" class="nav-btn" onclick="switchStage('nissan-coupling')">Step 04: 3rd PAA 'Nissan' Coupling</button>
+                <button id="btn-cello-coupling" class="nav-btn" onclick="switchStage('cello-coupling')">Step 05: 4th PAA 'Cello' Coupling</button>
+                <button id="btn-curtis-coupling" class="nav-btn" onclick="switchStage('curtis-coupling')">Step 06: 5th PAA 'Curtis' Coupling</button>
+                <button id="btn-lantus-coupling" class="nav-btn" onclick="switchStage('lantus-coupling')">Step 07: 6th PAA 'Lantus' Coupling</button>
+                <button id="btn-ranger-coupling" class="nav-btn" onclick="switchStage('ranger-coupling')">Step 08: 7th PAA 'Ranger' Coupling</button>
+                <button id="btn-windstar-coupling" class="nav-btn" onclick="switchStage('windstar-coupling')">Step 09: 8th PAA 'Windstar' Coupling</button>
+                <button id="btn-dry-material" class="nav-btn" onclick="switchStage('dry-material')">Step 10: Dry Material Master Mapping</button>
             </div>
 
             <div class="nav-group">
                 <div class="nav-group-title">Stage II: Cleavage & Workup</div>
-                <button class="nav-btn" onclick="switchStage('cleavage-reaction')">Page 13: 1% Tahan Sol. Cleavage</button>
-                <button class="nav-btn" onclick="switchStage('extraction-precipitation')">Page 14: Extraction & Precipitation</button>
+                <button id="btn-cleavage-reaction" class="nav-btn" onclick="switchStage('cleavage-reaction')">Step 11: Tahan Sol. Cleavage</button>
+                <button id="btn-extraction-precipitation" class="nav-btn" onclick="switchStage('extraction-precipitation')">Step 12: Extraction & Precipitation</button>
             </div>
         </nav>
 
-        <main class="main-viewport" id="stage-viewport"></main>
+        <main class="main-viewport" id="stage-viewport">
+            <!-- Injected dynamically -->
+        </main>
     </div>
 
     <script>
         const processDatabase = {
             'nortel-coupling': {
-                title: "1st PAA 'Nortel' Coupling & Capping (Page 03)",
+                stepNo: "01",
+                title: "1st PAA 'Nortel' Coupling & Capping (Step 01)",
                 vessel: "303HSPPS-C 3001 / 3002",
                 vesselType: "Hastelloy (Synthesis) | Cap: 3.0 KL",
-                input: "145 Kgs",
-                output: "306 (±30) Kgs",
                 params: [
                     { label: "Target Input Mass", value: "145 Kgs" },
                     { label: "Expected Out", value: "306 (±30) Kgs" },
-                    { label: "Nortel Weight", value: "38.86 Kgs (Factor: 0.2680)" },
+                    { label: "Nortel Weight", value: "38.86 Kgs" },
                     { label: "Capping Stir Time", value: "NLT 5 Min" }
                 ],
                 alerts: [
@@ -365,41 +350,69 @@
                 ],
                 steps: [
                     {
-                        title: "Initial Nitrogen Loading & Curitiba Prep",
+                        title: "Resin Loading & Initial Swelling Profile",
                         details: [
-                            "Charge Curitiba into HSPPS under nitrogen atmosphere.",
-                            "Charge MCI into HSPPS under nitrogen atmosphere; adjust mass temp to 25±3°C.",
-                            "Stir for target time of 20 min (range: 20±2 min) at 25±3°C.",
-                            "Filter the mass from HSPPS to waste tank with N2 pressure for 2 times."
+                            "Verify the synthesis vessel 303HSPPS-C 3001/3002 is thoroughly cleaned, dried, and leak-tested under pressure.",
+                            "Establish an inert atmosphere inside the vessel by performing 3 consecutive vacuum and Nitrogen gas (N2) purge cycles.",
+                            "Charge exactly 145.0 Kgs of Curitiba raw material under constant nitrogen gas blanket via the solid charging port.",
+                            "Meter and add 1450 Lts of MCI solvent into the vessel, monitoring the internal fluid level transmitter.",
+                            "Engage the mechanical agitator and adjust speed parameters to ensure complete resin matrix suspension.",
+                            "Circulate cooling fluid through the jacket to stabilize and maintain the internal mass temperature at 25±3°C.",
+                            "Agitate the resin slurry continuously for a target time of 20 minutes (allowable range: 20±2 minutes) to complete the swelling loop.",
+                            "Apply nitrogen pressure to discharge the liquid phase through the bottom filter assembly to the waste collecting tank, leaving the swollen resin behind.",
+                            "Repeat the complete MCI wash cycle a second time using another 1450 Lts of MCI; agitate for 10 minutes and blow dry with nitrogen."
                         ]
                     },
                     {
-                        title: "Nortel Coupling & DMF Wash Cascades",
+                        title: "Nortel Coupling Activations & Aging Cascades",
                         details: [
-                            "Charge Nortel into HSPPS under nitrogen atmosphere, followed by MCI.",
-                            "Adjust mass temperature to 20±5°C under nitrogen blanket and stir for NLT 5 min at 20±5°C.",
-                            "Prepare Douala and MCI solution in reactor and adjust solution to 20±3°C, then transfer the pre-cooled solution into HSPPS.",
-                            "Start ageing time at 20±1°C and stir for target time of 2 hours (range: 2 hr ± 10 min).",
-                            "Perform 5× DMF Wash cycles (5×1160 Lts); stir 10 min each, filter mass with N2 pressure to waste."
+                            "Maintain a constant nitrogen blanket over the drained resin bed inside the main processing vessel.",
+                            "Weigh out exactly 38.86 Kgs of Nortel active compound into the transfer hopper using calibrated floor scales.",
+                            "Charge the weighed Nortel into the vessel through the solid addition line under positive nitrogen pressure.",
+                            "Charge an additional volume of MCI solvent into the main vessel to thoroughly flush the entry ports and walls.",
+                            "Adjust the cooling water loop to stabilize the slurry mass temperature precisely between 15°C and 25°C (Target: 20±5°C).",
+                            "Initiate low-speed agitation and maintain the thermal condition for No Less Than (NLT) 5 minutes to fully wet out the solids.",
+                            "In a separate glass-lined preparation reactor, dissolve 101 Kgs of Douala into MCI solvent and stir until completely clear.",
+                            "Cool the prepared Douala solution in the preparation reactor down to 20±3°C before launching transfer configurations.",
+                            "Transfer the pre-cooled Douala solution from the preparation reactor into the main synthesis vessel slowly to mitigate heat generation.",
+                            "Log the start of the primary aging cycle once addition is complete; hold temperature strictly at 20±1°C.",
+                            "Maintain continuous agitation for a target runtime of 2 hours (allowable process range: 2 hours ± 10 minutes).",
+                            "Drain the spent reaction liquors out of the bottom filter line under nitrogen pressure directly to the designated recovery tank."
                         ]
                     },
                     {
-                        title: "Capping Protocol Sequence",
+                        title: "Post-Coupling DMF Washing Configurations",
                         details: [
-                            "Prepare Capping solution in reactor using DMF (928.0 Lts), Methanol (232.0 Lts), and Douala (25.23 Kgs).",
-                            "Adjust solution to 20±3°C under nitrogen atmosphere and stir for NLT 5 min before transferring to HSPPS.",
-                            "Start ageing time at 21±1°C and stir for target time of 30 Min (range: 30±3 min).",
-                            "Send the resin sample for substitution test after concluding the final DMF washes and rinses."
+                            "Configure the solvent supply manifolds to deliver DMF wash liquor to the synthesis vessel.",
+                            "Meter exactly 1160 Lts of clean DMF solvent and inject it into the vessel to wash the bound resin matrices.",
+                            "Run the mechanical agitator at standard washing speed for 10 minutes to extract unreacted free reagents from the resin surface.",
+                            "Pressurize the vessel with nitrogen gas to push the spent DMF solvent out through the bottom filter screen to waste storage.",
+                            "Execute this DMF washing sequence a total of 5 separate times (5 lots × 1160 Lts) to guarantee thorough resin purification.",
+                            "Take a visual site glass reading during the final wash drainage to check for clarity and record final fluid discharge parameters."
+                        ]
+                    },
+                    {
+                        title: "Resin Capping Block Execution Sequence",
+                        details: [
+                            "Isolate the synthesis vessel and prepare the reagent mixing tank for the terminal capping reaction loop.",
+                            "Charge 928.0 Lts of DMF solvent followed by 232.0 Lts of Methanol co-solvent into the secondary preparation tank.",
+                            "Add exactly 25.23 Kgs of Douala reagent into the solvent mixture and stir under a nitrogen blanket until fully homogenized.",
+                            "Circulate cooling media through the tank jacket to adjust and stabilize the capping fluid temperature to 20±3°C.",
+                            "Transfer the pre-cooled capping solution into the main synthesis vessel holding the washed resin mass.",
+                            "Set the process controllers to maintain the combined mass temperature at 21±1°C throughout the terminal block.",
+                            "Run the agitator to maintain resin suspension for an exact aging window of 30 minutes (allowable range: 30±3 minutes).",
+                            "Discharge the capping solution via nitrogen top pressure through the bottom screen to the hazardous waste line.",
+                            "Perform 3 final flush cycles with fresh DMF solvent to clear remaining trace alternatives from the finished capping lot.",
+                            "Extract a physical resin bead sample from the sampling valve under nitrogen isolation and submit to QA for substitution analysis."
                         ]
                     }
                 ]
             },
             'nortel-deprotection': {
-                title: "Deprotection After 'Nortel' Coupling (Page 04)",
+                stepNo: "02",
+                title: "Deprotection After 'Nortel' Coupling (Step 02)",
                 vessel: "303HSPPS-C 3001 / 3002",
                 vesselType: "Hastelloy (Synthesis) | Cap: 3.0 KL",
-                input: "145 Kgs",
-                output: "306 (±30) Kgs",
                 params: [
                     { label: "Deprotection Loops", value: "2 Times Total" },
                     { label: "Persian Mix Ratio", value: "20% Persian in DMF" },
@@ -417,457 +430,17 @@
                 ],
                 steps: [
                     {
-                        title: "Deprotection Wash Cycles",
+                        title: "Reagent Preparation and Charging Array",
                         details: [
-                            "Prepare 20% Persian in DMF solution in reactor and transfer solution into HSPPS at 20±5°C.",
-                            "Start ageing time at 22±1°C and stir for target time of 20 min (range: 20±2 min).",
-                            "Filter the mass from HSPPS to waste tank with N2 pressure for 2 times.",
-                            "Charge DMF as 3 lots (intended for deprotection vessel rinse) into HSPPS and entire 3 vol combine then filter mass."
-                        ]
-                    }
-                ]
-            },
-            'toyota-coupling': {
-                title: "2nd PAA 'Toyota' Coupling & De-protection (Page 05)",
-                vessel: "303HSPPS-C 3001 / 3002",
-                vesselType: "Hastelloy (Synthesis) | Cap: 3.0 KL",
-                input: "145 Kgs",
-                output: "306 (±30) Kgs",
-                params: [
-                    { label: "Toyota Weight", value: "72.21 Kgs" },
-                    { label: "Storme Volume", value: "32.91 Kgs" },
-                    { label: "Dindori Volume", value: "725 Lts" },
-                    { label: "Ninhydrin Test", value: "Resin Beads Bound" }
-                ],
-                alerts: [
-                    { type: 'warning', text: "CPP: Temperature of mass in the reactor must be maintained between 25±2°C during scaleup coupling reaction." }
-                ],
-                materials: [
-                    { name: "Toyota", factor: "0.4980", qty: "72.21 Kgs" },
-                    { name: "Storme", factor: "0.2270", qty: "32.91 Kgs" },
-                    { name: "Dindori", factor: "5.0000", qty: "725 Lts" },
-                    { name: "DMF Wash", factor: "8.0000", qty: "1160 Lts" }
-                ],
-                steps: [
-                    {
-                        title: "Toyota Sequence Operations",
-                        details: [
-                            "Charge Toyota into reactor under nitrogen atmosphere, followed by Storme and Dindori.",
-                            "Stir for 20±2°C at target time of 2 hrs (range 2 hr±10 min).",
-                            "Transfer the Toyota solution from reactor to HSPPS and adjust the mass temp to 25±2°C.",
-                            "Send sample for Ninhydrin Test (Resin beads). If test does not comply, stir for an additional 2-4 hr."
-                        ]
-                    }
-                ]
-            },
-            'nissan-coupling': {
-                title: "3rd PAA 'Nissan' Coupling & De-protection (Page 06)",
-                vessel: "303HSPPS-C 3001 / 3002",
-                vesselType: "Hastelloy | 3.0 KL Capacity",
-                input: "145 Kgs",
-                output: "306 (±30) Kgs",
-                params: [
-                    { label: "Nissan Mass", value: "81.92 Kgs" },
-                    { label: "Storme Qty", value: "32.91 Kgs" },
-                    { label: "Dindori Vol", value: "725 Lts" },
-                    { label: "Ageing Target", value: "30±3 Min" }
-                ],
-                alerts: [
-                    { type: 'warning', text: "HCN Gas Warning: HCN gas is liberated during scaleup coupling reaction execution." }
-                ],
-                materials: [
-                    { name: "Nissan", factor: "0.5650", qty: "81.92 Kgs" },
-                    { name: "Storme", factor: "0.2270", qty: "32.91 Kgs" },
-                    { name: "Dindori", factor: "5.0000", qty: "725 Lts" }
-                ],
-                steps: [
-                    {
-                        title: "Nissan Sequence Execution",
-                        details: [
-                            "Charge Nissan into reactor under nitrogen atmosphere, followed by Storme and Dindori.",
-                            "Start the ageing time at 20±1°C and stir for target time of 30 min (range 30±3 min).",
-                            "Transfer Nissan solution from reactor to HSPPS at 20±5°C.",
-                            "Perform deprotection and washing loops using 20% Persian in DMF solution, stirring for 30 min."
-                        ]
-                    }
-                ]
-            },
-            'cello-coupling': {
-                title: "4th PAA 'Cello' Coupling & De-protection (Page 07)",
-                vessel: "303HSPPS-C 3001 / 3002",
-                vesselType: "Hastelloy | 3.0 KL Capacity",
-                input: "145 Kgs",
-                output: "306 (±30) Kgs",
-                params: [
-                    { label: "Cello Weight", value: "81.92 Kgs" },
-                    { label: "Storme Weight", value: "32.91 Kgs" },
-                    { label: "Dindori Volume", value: "725 Lts" },
-                    { label: "Scaleup Hold", value: "20±2 Min" }
-                ],
-                alerts: [
-                    { type: 'warning', text: "Note: HCN gas is liberated during scaleup coupling reaction. Ensure proper ventilation loops are active." }
-                ],
-                materials: [
-                    { name: "Cello", factor: "0.5650", qty: "81.92 Kgs" },
-                    { name: "Storme", factor: "0.2270", qty: "32.91 Kgs" },
-                    { name: "Dindori", factor: "5.0000", qty: "725 Lts" }
-                ],
-                steps: [
-                    {
-                        title: "Cello Matrix Processing",
-                        details: [
-                            "Charge Cello into reactor under nitrogen atmosphere, followed by Storme and Dindori.",
-                            "Cool the mass temp to 20±5°C under nitrogen atmosphere.",
-                            "Start the ageing time at 20±1°C and stir for target time of 30±3 min.",
-                            "Transfer Cello solution to HSPPS at 20±5°C and proceed to Ninhydrin testing parameters."
-                        ]
-                    }
-                ]
-            },
-            'curtis-coupling': {
-                title: "5th PAA 'Curtis' Coupling & De-protection (Page 08)",
-                vessel: "303HSPPS-C 3001 / 3002",
-                vesselType: "Hastelloy Module System",
-                input: "145 Kgs",
-                output: "306 (±30) Kgs",
-                params: [
-                    { label: "Curtis Weight", value: "122.16 Kgs" },
-                    { label: "Storme Mass", value: "32.91 Kgs" },
-                    { label: "Dindori Fluid", value: "725 Lts" }
-                ],
-                alerts: [
-                    { type: 'warning', text: "Notice: HCN gas validation required during Curtis coupling sequence execution." }
-                ],
-                materials: [
-                    { name: "Curtis", factor: "0.8425", qty: "122.16 Kgs" },
-                    { name: "Storme", factor: "0.2270", qty: "32.91 Kgs" },
-                    { name: "Dindori", factor: "5.0000", qty: "725 Lts" }
-                ],
-                steps: [
-                    {
-                        title: "Curtis Flow Protocols",
-                        details: [
-                            "Charge Curtis into reactor under nitrogen atmosphere, followed by Storme and Dindori.",
-                            "Adjust the mass temp to 20±3°C under nitrogen atmosphere.",
-                            "Stir for 20±1°C at target time of 30 min (range 30 ±3 min) and adjust mass temp to 20±3°C.",
-                            "Transfer the solution directly from reactor to HSPPS at 20±3°C."
-                        ]
-                    }
-                ]
-            },
-            'lantus-coupling': {
-                title: "6th PAA 'Lantus' Coupling & De-protection (Page 09)",
-                vessel: "303HSPPS-C 3001 / 3002",
-                vesselType: "Hastelloy Synthesis Setup",
-                input: "145 Kgs",
-                output: "306 (±30) Kgs",
-                params: [
-                    { label: "Lantus Weight", value: "141.66 Kgs" },
-                    { label: "Storme Volume", value: "32.91 Kgs" },
-                    { label: "Dindori Solvent", value: "725 Lts" }
-                ],
-                alerts: [
-                    { type: 'warning', text: "HCN execution limits: Monitor scaleup coupling reaction lines continuously." }
-                ],
-                materials: [
-                    { name: "Lantus", factor: "0.9770", qty: "141.66 Kgs" },
-                    { name: "Storme", factor: "0.2270", qty: "32.91 Kgs" },
-                    { name: "Dindori", factor: "5.0000", qty: "725 Lts" }
-                ],
-                steps: [
-                    {
-                        title: "Lantus Batch Sequence",
-                        details: [
-                            "Charge Lantus into reactor under nitrogen atmosphere, followed by Storme and Dindori.",
-                            "Start the ageing time at 20±1°C and stir for target time of 30 min.",
-                            "Transfer Lantus solution out of the reactor to HSPPS unit matrices safely."
-                        ]
-                    }
-                ]
-            },
-            'ranger-coupling': {
-                title: "7th PAA 'Ranger' Coupling & De-protection (Page 10)",
-                vessel: "303HSPPS-C 3001 / 3002",
-                vesselType: "Hastelloy Framework",
-                input: "145 Kgs",
-                output: "306 (±30) Kgs",
-                params: [
-                    { label: "Ranger Mass", value: "78.73 Kgs" },
-                    { label: "Storme Mass", value: "32.91 Kgs" },
-                    { label: "Dindori Volume", value: "725 Lts" }
-                ],
-                alerts: [
-                    { type: 'warning', text: "Alert: Keep reaction environment inert with continuous N2 purging." }
-                ],
-                materials: [
-                    { name: "Ranger", factor: "0.5430", qty: "78.73 Kgs" },
-                    { name: "Storme", factor: "0.2270", qty: "32.91 Kgs" },
-                    { name: "Dindori", factor: "5.0000", qty: "725 Lts" }
-                ],
-                steps: [
-                    {
-                        title: "Ranger Engineering Loops",
-                        details: [
-                            "Charge Ranger into reactor under nitrogen atmosphere, followed by Storme and Dindori.",
-                            "Adjust mass temp to 20±5°C under nitrogen atmosphere layer.",
-                            "Transfer the Ranger solution from reactor to HSPPS at 20±5°C safely."
-                        ]
-                    }
-                ]
-            },
-            'windstar-coupling': {
-                title: "8th PAA 'Windstar' Coupling & De-protection (Page 11)",
-                vessel: "303HSPPS-C 3001 / 3002",
-                vesselType: "Hastelloy Systems Terminal",
-                input: "145 Kgs",
-                output: "306 (±30) Kgs",
-                params: [
-                    { label: "Windstar Weight", value: "89.9 Kgs" },
-                    { label: "Storme Volume", value: "32.91 Kgs" },
-                    { label: "Dindori Volume", value: "725 Lts" }
-                ],
-                alerts: [
-                    { type: 'warning', text: "Note: Charge DMF 5 times into HSPPS and stir for target time 10 min each." }
-                ],
-                materials: [
-                    { name: "Windstar", factor: "0.6200", qty: "89.9 Kgs" },
-                    { name: "Storme", factor: "0.2270", qty: "32.91 Kgs" },
-                    { name: "Dindori", factor: "5.0000", qty: "725 Lts" }
-                ],
-                steps: [
-                    {
-                        title: "Windstar Terminal Steps",
-                        details: [
-                            "Charge Windstar into reactor under nitrogen atmosphere, followed by Storme and Dindori.",
-                            "Adjust the mass temp to 20±5°C under nitrogen atmosphere.",
-                            "Send sample to QC for LOD test; upload data sheets upon completion validation."
-                        ]
-                    }
-                ]
-            },
-            'dry-material': {
-                title: "Dry Material Code Name Mapping Matrix (Page 12)",
-                vessel: "SYSTEM MASTER REF",
-                vesselType: "Specification Sheet Context",
-                input: "N/A",
-                output: "N/A",
-                params: [
-                    { label: "Target Profile", value: "Nitya-I Dry Material" },
-                    { label: "Final Stage Code", value: "Stage-I Synthesis" }
-                ],
-                alerts: [
-                    { type: 'warning', text: "Verification Check: Ensure raw material codes match original plant master list before clearing Stage-II workflow entry." }
-                ],
-                materials: [
-                    { name: "Windstar", factor: "Fmoc-L-Phe-OH", qty: "Master Code Verification" },
-                    { name: "Storme", factor: "Ethylcyanohydroxyiminoacetate (Oxyma)", qty: "Reagent Match" },
-                    { name: "Dindori", factor: "N,N-Diisopropylcarbodiimide (DIC)", qty: "Coupling Agent" },
-                    { name: "Zamalya", factor: "MTBE", qty: "Solvent Matrix" }
-                ],
-                steps: [
-                    {
-                        title: "Cross-Reference Validation Controls",
-                        details: [
-                            "Verify that all raw material factors used in Pages 03-11 perfectly align with the registered chemical nomenclature listed on Page 12.",
-                            "Ensure that inventory codes match the original plant master database before starting Stage-II Cleavage."
-                        ]
-                    }
-                ]
-            },
-            'cleavage-reaction': {
-                title: "Stage II Cleavage: 1% Tahan Solution Phase (Page 13)",
-                vessel: "303HSPPS-C 3003",
-                vesselType: "Hastelloy MOC | Cap: 1.0 KL",
-                input: "180 Kgs (30 Kgs × 6 Sub Lots)",
-                output: "~87 (±9) Kgs from 6 Lots",
-                params: [
-                    { label: "Tahan Qty", value: "594 Lts (Factor: 19.800)" },
-                    { label: "MCI Volume", value: "300 Lts (Factor: 10.000)" },
-                    { label: "Cleavage Stir", value: "10±5 Min at 25±3°C" }
-                ],
-                alerts: [
-                    { type: 'danger', text: "Critical Parameter: Total tahan exposure must be limited to NMT 40 Min. Temperature of Tahan/MCI solution must be maintained between 22°C and 28°C." }
-                ],
-                materials: [
-                    { name: "Nitya-I (dry) material", factor: "1.0000", qty: "30 Kgs" },
-                    { name: "MCI", factor: "10.0000", qty: "300 Lts" },
-                    { name: "Tahan", factor: "19.8000", qty: "594 Lts" },
-                    { name: "DM Water", factor: "10.0000", qty: "300 Lts" }
-                ],
-                steps: [
-                    {
-                        title: "Resin Loading & Tahan Solution Cleavage",
-                        details: [
-                            "Charge Nitya-I (dry) material into HSPPS under N2 atmosphere.",
-                            "Charge MCI into HSPPS under N2 atmosphere; stir for NLT 40±5 Min at 25±3°C under N2 atmosphere.",
-                            "Filter the mass from HSPPS to waste tank under N2 atmosphere.",
-                            "Transfer the 1% Tahan Sol from Reactor to HSPPS at 25±3°C; stir the mass in HSPPS for 10±5 Min at 25±3°C under N2."
+                            "Ensure the main synthesis vessel containing the capped resin from Step 1 is stable and isolated under nitrogen pressure.",
+                            "Meter 928.0 Lts of DMF solvent into the glass-lined auxiliary reactor and begin slow paddle agitation.",
+                            "Carefully vacuum-charge 232 Lts of liquid Persian compound into the auxiliary reactor to create a 20% v/v solution.",
+                            "Cool the prepared deprotection mixture using the reactor jacket loop until the temperature stabilizes at 20±5°C.",
+                            "Open the transfer line valves and pump the 20% Persian/DMF solution into the main synthesis vessel under a nitrogen blanket.",
+                            "Monitor the internal pressure parameters closely during transfer, as minor gas evolution may occur during initial contact."
                         ]
                     },
                     {
-                        title: "Neutralization Cascade",
+                        title: "Primary Deprotection and Gas Venting Controls",
                         details: [
-                            "Filter the mass from HSPPS to Neutralization reactor under N2 atmosphere.",
-                            "Charge DM water into Neutralization reactor under N2 atmosphere, followed by Charge Vietnam into Reactor under N2 atmosphere.",
-                            "Cool the Vietnam at 25±5°C; stir the mass for NLT 30 min at 25±5°C.",
-                            "Settle the mass for NLT 45 min at 25±5°C, then separate the organic layer into RT from Neutralization reactor."
-                        ]
-                    }
-                ]
-            },
-            'extraction-precipitation': {
-                title: "Stage II Cleavage: Extraction & Precipitation (Page 14)",
-                vessel: "303SSR-C 3007 / 3008 / 3010",
-                vesselType: "SS316 Extraction & Concentration Loop",
-                input: "Individual Lot Procedure",
-                output: "~87 (±9) Kgs Final Dry Material",
-                params: [
-                    { label: "MCI Qty", value: "300 Lts" },
-                    { label: "n-Heptane Lots", value: "3 × 300 Lts" },
-                    { label: "ANF Vacuum", value: "Minimum 600 mmHg" },
-                    { label: "Dry Temp Limit", value: "Below 40 ±5°C" }
-                ],
-                alerts: [
-                    { type: 'warning', text: "Notice: Distil off the solvent in reactor under vacuum until mass volume reaches ~420 Lts at below 25°C." }
-                ],
-                materials: [
-                    { name: "MCI", factor: "10.0000", qty: "300 Lts" },
-                    { name: "n-Heptane (Concentration)", factor: "10.0000", qty: "300 Lts" },
-                    { name: "n-Heptane (Precipitation)", factor: "10.0000", qty: "300 Lts" },
-                    { name: "n-Heptane (ANF Wash)", factor: "3.0000", qty: "540 Lts" }
-                ],
-                steps: [
-                    {
-                        title: "Extraction & Concentration Sequence",
-                        details: [
-                            "Receive Aq. Layer into reactor 303SSR-C 3007 from RT through pump.",
-                            "Charge MCI into reactor; stir for NLT 15 Min at 25±5°C, then settle for NLT 45 Min at 25±5°C.",
-                            "Separate the Org. Layer into receiver tank; drain the Aq. layer.",
-                            "Receive the org. layer into concentration reactor 3008/3009, apply vacuum, and distil off solvent below 25°C until volume is ~420 Lts."
-                        ]
-                    },
-                    {
-                        title: "Precipitation & Filter Cake Wash (ANF)",
-                        details: [
-                            "Charge n-Heptane (300 Lts) into reactor, apply vacuum, and distil solvent down to ~168 Lts below 25°C.",
-                            "Transfer mass to Precipitation reactor 3010/3011, charge n-Heptane (300 Lts), and stir for NLT 30 Min at 25±5°C.",
-                            "Transfer the mass from Precipitation reactor to ANF (303ANF-C 3001/3002).",
-                            "Filter the mass at 25±5°C, wash cake with n-Heptane, and apply a vacuum of minimum 600 mmHg.",
-                            "Dry under vacuum below 40±5°C; cool below 35°C, then offload Nitya-II (Dry) material (~87±9 kgs)."
-                        ]
-                    }
-                ]
-            }
-        };
-
-        function switchStage(stageKey) {
-            const data = processDatabase[stageKey];
-            if (!data) return;
-
-            // Update Active Class on Sidebar Buttons
-            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-
-            // Generate Parameters Grid Cards
-            let paramsHTML = '';
-            data.params.forEach(p => {
-                paramsHTML += `
-                    <div class="param-card">
-                        <div class="param-label">${p.label}</div>
-                        <div class="param-value">${p.value}</div>
-                    </div>
-                `;
-            });
-
-            // Generate Warning/Alert Boxes
-            let alertsHTML = '';
-            data.alerts.forEach(a => {
-                alertsHTML += `
-                    <div class="alert-box ${a.type === 'danger' ? '' : 'warning'}">
-                        <strong>${a.type === 'danger' ? 'CRITICAL CPP ALERT:' : 'PROCESS NOTE:'}</strong> ${a.text}
-                    </div>
-                `;
-            });
-
-            // Generate Materials Table Content
-            let materialsHTML = '';
-            if (data.materials && data.materials.length > 0) {
-                materialsHTML += `
-                    <h3>Raw Material Charges Configuration</h3>
-                    <table class="material-table">
-                        <thead>
-                            <tr>
-                                <th>Raw Material / Code Name</th>
-                                <th>Factor Value</th>
-                                <th>Charge Quantity</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                `;
-                data.materials.forEach(m => {
-                    materialsHTML += `
-                        <tr>
-                            <td><strong>${m.name}</strong></td>
-                            <td>${m.factor}</td>
-                            <td><span class="highlight-text">${m.qty}</span></td>
-                        </tr>
-                    `;
-                });
-                materialsHTML += `</tbody></table>`;
-            }
-
-            // Generate Step-by-Step Blocks
-            let stepsHTML = '';
-            data.steps.forEach((step, idx) => {
-                let subSteps = '';
-                step.details.forEach(detail => {
-                    subSteps += `<li>${detail}</li>`;
-                });
-
-                stepsHTML += `
-                    <div class="step-block">
-                        <h4>Step ${idx + 1}: ${step.title}</h4>
-                        <ul class="sub-steps-list">
-                            ${subSteps}
-                        </ul>
-                    </div>
-                `;
-            });
-
-            // Construct Full Viewport Structure
-            const container = document.getElementById('stage-viewport');
-            container.innerHTML = `
-                <div class="mimic-panel">
-                    <div class="mimic-header">
-                        <div>
-                            <span class="reactor-id">${data.vessel}</span>
-                            <span style="color: var(--text-muted); font-size: 0.9rem; margin-left: 10px;">${data.vesselType}</span>
-                        </div>
-                        <div class="live-status-pill">System Engaged</div>
-                    </div>
-                    
-                    <h2 style="color: var(--text-main); margin-bottom: 10px;">${data.title}</h2>
-                    
-                    <div class="dashboard-grid">
-                        ${paramsHTML}
-                    </div>
-                    
-                    ${alertsHTML}
-                </div>
-
-                ${materialsHTML}
-
-                <div class="process-details-section">
-                    <h2>Step-by-Step Production Formulation</h2>
-                    ${stepsHTML}
-                </div>
-            `;
-        }
-
-        // Initialize dashboard content with the first option on page startup
-        window.onload = function() {
-            switchStage('nortel-coupling');
-        };
-    </script>
-</body>
-</html>
+                   
